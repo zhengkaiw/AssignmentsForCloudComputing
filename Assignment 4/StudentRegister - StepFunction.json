@@ -1,0 +1,51 @@
+{
+  "StartAt": "createStudent",
+  "States": {
+    "createStudent": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-west-2:969637211267:function:createStudent",
+      "Next": "courseRegisterCheck"
+    },
+    "courseRegisterCheck": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-west-2:969637211267:function:courseRegister",
+      "Next": "isRegistered"
+    },
+    "isRegistered": {
+      "Type": "Choice",
+      "Choices": [
+        {
+           "Variable": "$.isRegister",
+           "StringEquals": "true",
+           "Next": "chargeCourse"
+        },
+        {
+          "Variable": "$.isRegister",
+          "StringEquals": "false",
+          "Next": "registerService"
+        }
+      ],
+      "Default": "DefaultState"
+    },
+    "chargeCourse": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-west-2:969637211267:function:chargeCourse",
+      "Next": "notifyStudent"
+    },
+    "DefaultState": {
+      "Type": "Fail",
+      "Error": "DefaultStateError",
+      "Cause": "No Mathces!"
+    },
+    "notifyStudent": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-west-2:969637211267:function:notifyStudent",
+      "End": true
+    },
+    "registerService": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-west-2:969637211267:function:registerService",
+      "End": true
+    }
+  }
+}
