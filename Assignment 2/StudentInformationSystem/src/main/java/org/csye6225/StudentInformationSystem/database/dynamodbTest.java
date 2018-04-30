@@ -151,7 +151,7 @@ public class dynamodbTest {
 			item1.put("Id", new AttributeValue().withS("001"));
 			item1.put("Name", new AttributeValue().withS("Kevin"));
 			item1.put("Image", new AttributeValue().withS("img1"));
-			item1.put("Email", new AttributeValue().withS("zheng.kaiw@husky.neu.edu"));
+			item1.put("Email", new AttributeValue().withS("***"));
 			item1.put("Courses", new AttributeValue().withSS("INFO6250", "INFO6550"));
 			item1.put("Program", new AttributeValue().withS("IS"));
 			
@@ -165,7 +165,7 @@ public class dynamodbTest {
 			item2.put("Id", new AttributeValue().withS("002"));
 			item2.put("Name", new AttributeValue().withS("Tom"));
 			item2.put("Image", new AttributeValue().withS("img2"));
-			item2.put("Email", new AttributeValue().withS("kepadexiao@gmail.com"));
+			item2.put("Email", new AttributeValue().withS("***"));
 			item2.put("Courses", new AttributeValue().withSS("INFO6250", "INFO6500"));
 			item2.put("Program", new AttributeValue().withS("IS"));
 			

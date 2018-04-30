@@ -13,7 +13,7 @@ public class LambdaFunctionHandler implements RequestHandler<DynamodbEvent, Inte
 
 	private AmazonSNS SNS_CLIENT = AmazonSNSClientBuilder.standard()
 			.withRegion(Regions.US_WEST_2).build();
-	private static String RESTURANTS_SNS_TOPIC = "arn:aws:sns:us-west-2:969637211267:test";
+	private static String RESTURANTS_SNS_TOPIC = "***:test";
     
 	@Override
 	public Integer handleRequest(DynamodbEvent input, Context context) {

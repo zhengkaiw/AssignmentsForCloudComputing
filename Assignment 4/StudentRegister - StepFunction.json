@@ -3,12 +3,12 @@
   "States": {
     "createStudent": {
       "Type": "Task",
-      "Resource": "arn:aws:lambda:us-west-2:969637211267:function:createStudent",
+      "Resource": "***:function:createStudent",
       "Next": "courseRegisterCheck"
     },
     "courseRegisterCheck": {
       "Type": "Task",
-      "Resource": "arn:aws:lambda:us-west-2:969637211267:function:courseRegister",
+      "Resource": "***:function:courseRegister",
       "Next": "isRegistered"
     },
     "isRegistered": {
@@ -29,7 +29,7 @@
     },
     "chargeCourse": {
       "Type": "Task",
-      "Resource": "arn:aws:lambda:us-west-2:969637211267:function:chargeCourse",
+      "Resource": "***:function:chargeCourse",
       "Next": "notifyStudent"
     },
     "DefaultState": {
@@ -39,12 +39,12 @@
     },
     "notifyStudent": {
       "Type": "Task",
-      "Resource": "arn:aws:lambda:us-west-2:969637211267:function:notifyStudent",
+      "Resource": "***:function:notifyStudent",
       "End": true
     },
     "registerService": {
       "Type": "Task",
-      "Resource": "arn:aws:lambda:us-west-2:969637211267:function:registerService",
+      "Resource": "***:function:registerService",
       "End": true
     }
   }

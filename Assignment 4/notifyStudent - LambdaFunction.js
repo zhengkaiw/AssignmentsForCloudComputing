@@ -22,7 +22,7 @@ exports.handler = (event, context, callback) => {
         const params = {
             Message: JSON.stringify(messageForStudent),
             MessageStructure: 'json',
-            TopicArn: 'arn:aws:sns:us-west-2:969637211267:testForCourseRegister'
+            TopicArn: '***:testForCourseRegister'
         };
         
         const publishPromise = sns.publish(params).promise();
